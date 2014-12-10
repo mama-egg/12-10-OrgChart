@@ -1,1 +1,3 @@
-// class to represent a manager - inherits Emplyee
+public class Manager extends Employee {
+  
+}
