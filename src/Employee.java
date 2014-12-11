@@ -35,7 +35,7 @@ public class Employee extends Person {
   }
   
   private String getManager() {
-    return //return the string value of manager?????
+    return Manager.toString();
   }
   
   //Mutators
@@ -44,5 +44,23 @@ public class Employee extends Person {
     return hourlyWage;
   }
   
-  private double 
+  private int setHours(int h) {
+    hours = h;
+    return hours;
+  }
+  
+  private String setJobTitle(String title) {
+    jobTitle = title;
+    return jobTitle;
+  }
+  
+  private double giveRaise() {
+    hourlyWage++;
+    return hourlyWage;
+  }
+  
+  private String setManager(Manager newManager) {
+    Manager manager = newManager;
+    return manager;
+  }
 }
