@@ -4,9 +4,13 @@ public class Person {
   private String last;
   private int age;
   
-  private Person blap = new Person(); //Create a blank person
+  private Person() { //Create a blank person
+  first = "";
+  last = "";
+  age = 0;
+  }
   
-  private Person inpp = new Person(String x, String y, int z) { //Create a person and set their values using input
+  private Person(String x, String y, int z) { //Create a person and set their values using input
     first = x;
     last = y;
     age = z;
@@ -24,7 +28,7 @@ public class Person {
     return last;
   }
   
-  private void setLastName(String y) {
+  private void setLastName(String x) {
     last = y;
   }
   
