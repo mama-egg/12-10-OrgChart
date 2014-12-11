@@ -16,27 +16,24 @@ public class Person {
     return first;
   }
   
-  private String setFirstName(String x) {
+  private void setFirstName(String x) {
     first = x;
-    return first;
   }
   
   private String getLastName() { //Return the Person's last name
     return last;
   }
   
-  private String setLastName(String y) {
+  private void setLastName(String y) {
     last = y;
-    return last;
   }
   
   private int getAge() { //Find and return the Person's age
     return age;
   }
   
-  private int setAge(int z) {
+  private void setAge(int z) {
     age = z;
-    return age;
   }
   
   private void toString() { //Print the Person's name as last, first
