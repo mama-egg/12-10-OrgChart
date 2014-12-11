@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Manager extends Employee {
   
-  super(first, last, age, hourlyWage, hoursWorked, jobTitle);
-  private ArrayList<String> directReports = new ArrayList<String>();
+  super(); //Actually I might not need this. Remove later.
+  private ArrayList<Employee> directReports = new ArrayList<Employee>();
   private String department;
   
   //Accessors
@@ -11,12 +11,12 @@ public class Manager extends Employee {
     return department;
   }
   
-  private String getDirectReports() {
+  private Employee getDirectReports() {
     return directReports;
   }
   
   private String toString() {
-    return Manager.toString();
+    return super.toString(manager);
   }
   
   //Mutators
@@ -28,7 +28,7 @@ public class Manager extends Employee {
     directreports.remove(employee);
   }
   
-  private String setDepartment(String dept) {
+  private void setDepartment(String dept) {
     department = dept;
   }
 }
