@@ -1,13 +1,21 @@
 public class Employee extends Person {
   
-  super(first, last, age);
+  super(first, last, age); ///Get the parameters from the superclass Person
+  
   private double hourlyWage;
   private int hoursWorked;
   private String jobTitle;
-  //Add new field manager of type Manager
+  private Manager manager; //Add new field manager of type Manager
   
-  private Employee(String first, String last, int age, double hourlyWage, int hoursWorked, String jobTitle);
-  //Write a constructor that takes 6 parameters - the ones from Peron and the three others.
+  private Employee(String first, String last, int age, double hourlyWage, int hoursWorked, String jobTitle){
+    Employee.setFirstName(first);//Use the constructors and methods from superclas Person
+    Employee.setLastName(last);
+    Employee.setAge(age);
+    
+    Employee.setHourlyWage(hourlyWage);//Use the new constructors from class Employee
+    Employee.setHoursWorked(hoursWorked);
+    Employee.setJobTitle(jobTitle);
+  }
   
   private double getWage() { //
     return hourlyWage;
@@ -35,32 +43,35 @@ public class Employee extends Person {
   }
   
   private String getManager() {
-    return Manager.toString();
+    return manager;
   }
   
   //Mutators
-  private double setWage(double newWage) {
+  private void setWage(double newWage) {
     hourlyWage = newWage;
-    return hourlyWage;
   }
   
-  private int setHours(int h) {
+  private void setHours(int h) {
     hours = h;
-    return hours;
   }
   
-  private String setJobTitle(String title) {
+  private void setJobTitle(String title) {
     jobTitle = title;
-    return jobTitle;
   }
   
-  private double giveRaise() {
+  private void giveRaise() {
     hourlyWage++;
-    return hourlyWage;
   }
   
-  private String setManager(Manager newManager) {
+  private void setManager(Manager newManager) {
     Manager manager = newManager;
-    return manager;
+    if(manager==null) {
+      manager = newManager;
+      Manager.addDirectReport(Employee);
+    }
+    else {
+      Manager.removeDirectReport(Employee);
+      setManager(newManager);
+    }
   }
 }
