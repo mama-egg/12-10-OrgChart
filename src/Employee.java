@@ -67,6 +67,7 @@ public class Employee extends Person {
     Manager manager = newManager;
     if(manager != null) {
       Manager.removeDirectReport(Employee);
+      manager = null;
       setManager(newManager);
     }
     else if(manager == null) {
