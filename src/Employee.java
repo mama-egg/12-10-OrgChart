@@ -65,13 +65,13 @@ public class Employee extends Person {
   
   private void setManager(Manager newManager) {
     Manager manager = newManager;
-    if(manager==null) {
-      manager = newManager;
-      Manager.addDirectReport(Employee);
-    }
-    else {
+    if(manager != null) {
       Manager.removeDirectReport(Employee);
       setManager(newManager);
+    }
+    else if(manager == null) {
+      manager = newManager;
+      Manager.addDirectReport(Employee);
     }
   }
 }
